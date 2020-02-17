@@ -1,0 +1,280 @@
+$primary: #1f1f70;
+$secondary: #00eb80;
+$font-fam: Arial, Helvetica, sans-serif;
+* {
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  font-family: $font-fam;
+}
+
+.bgpattern {
+  background-color: #8b8b8b;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%231f1f70' fill-opacity='0.1' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+nav {
+  height: 80px;
+}
+
+ul.sidenav {
+  li a {
+    color: #000000;
+  }
+  li a:hover {
+    background-color: rgba(31, 31, 112, 0.4);
+    border-bottom: 2px solid $primary;
+  }
+  li a.sideactive {
+    background-color: rgba(31, 31, 112, 0.4);
+  }
+  a.close {
+    background-color: $primary;
+    color: #ffffff;
+  }
+  a.cloe:hover {
+    background-color: #ffffff;
+    border: 2px solid $primary;
+    color: $primary;
+  }
+}
+.nav-wrapper {
+  background-image: linear-gradient(-50deg, #01579b 50%, $primary 50%);
+  a.active {
+    border-bottom: 3px solid $secondary;
+  }
+}
+.submit {
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  padding: 15px;
+  transition: all 0.5s;
+  border: none;
+  margin-bottom: 10px;
+  cursor: pointer;
+  background-color: $primary;
+  span {
+    cursor: pointer;
+    display: inline;
+    position: relative;
+    transition: 0.5s;
+  }
+  span:after {
+    content: "\00bb";
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+}
+
+.submit:hover span {
+  padding-right: 25px;
+}
+.submit:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 74px;
+  background-color: $primary;
+  color: #ffffff;
+  .footer-copyright {
+    background-color: #01579b;
+  }
+}
+
+/*final version of hexagon layout  */
+#hexGrid {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(10, 1fr);
+  width: 90%;
+  margin: 0 auto;
+  font-family: "Raleway", sans-serif;
+  font-size: 15px;
+  list-style-type: none;
+  overflow: hidden;
+}
+
+.hex {
+  grid-column-end: span 2;
+  position: relative;
+  visibility: hidden;
+  outline: 1px solid transparent; /* fix for jagged edges in FF on hover transition */
+  img {
+    left: -100%;
+    right: -100%;
+    width: auto;
+    height: 100%;
+    margin: 0 auto;
+    -webkit-transform: rotate3d(0, 0, 0, 0deg);
+    -ms-transform: rotate3d(0, 0, 0, 0deg);
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+  h1 {
+    bottom: 50%;
+    padding-top: 50%;
+    font-size: 1.5em;
+    z-index: 1;
+    -webkit-transform: translate3d(0, -100%, 0);
+    -ms-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  h1::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 45%;
+    width: 10%;
+    text-align: center;
+    border-bottom: 1px solid #fff;
+  }
+  p {
+    top: 50%;
+    padding-bottom: 50%;
+    -webkit-transform: translate3d(0, 100%, 0);
+    -ms-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+  svg {
+    left: -100%;
+    right: -100%;
+    width: auto;
+    height: 100%;
+    background-color: #1f1f70;
+    margin: 0 auto;
+    -webkit-transform: rotate3d(0, 0, 0, 0deg);
+    -ms-transform: rotate3d(0, 0, 0, 0deg);
+    transform: rotate3d(0, 0, 0, 0deg);
+    rect {
+      fill: #1f1f70;
+      width: 100%;
+      height: 100%;
+    }
+    text {
+      fill: #ffffff;
+      width: 199%;
+      padding: 5%;
+      box-sizing: border-box;
+      font-weight: 300;
+      padding-bottom: 50%;
+    }
+  }
+}
+.hex::after {
+  content: "";
+  display: block;
+  padding-bottom: 86.602%; /* =  100 / tan(60) * 1.5 */
+}
+.hexIn {
+  position: absolute;
+  width: 100%;
+  padding-bottom: 115.47%; /* =  width / sin(60) */
+  overflow: hidden;
+  visibility: hidden;
+  outline: 1px solid transparent; /* fix for jagged edges in FF on hover transition */
+  -webkit-transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
+  -ms-transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
+  transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
+}
+.hexIn * {
+  position: absolute;
+  visibility: visible;
+  outline: 1px solid transparent; /* fix for jagged edges in FF on hover transition */
+}
+.hexLink {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+  -webkit-transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
+  -ms-transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
+  transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
+}
+
+/*** HEX CONTENT **********************************************************************/
+
+.hex h1,
+.hex p {
+  width: 100%;
+  padding: 5%;
+  box-sizing: border-box;
+  background-color: rgba(0, 128, 128, 0.8);
+  font-weight: 300;
+  -webkit-transition: -webkit-transform 0.2s ease-out, opacity 0.3s ease-out;
+  transition: transform 0.2s ease-out, opacity 0.3s ease-out;
+}
+
+/*** HOVER EFFECT  **********************************************************************/
+.hexLink:hover h1,
+.hexLink:focus h1,
+.hexLink:hover p,
+.hexLink:focus p {
+  -webkit-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+/*** HEXAGON SIZING AND EVEN ROW INDENTATION *****************************************************************/
+
+@media (min-width: 1201px) {
+  /* <- 5-4  hexagons per row */
+  #hexGrid {
+    padding-bottom: 4.4%;
+  }
+  .hex:nth-child(9n + 6) {
+    /* first hexagon of even rows */
+    grid-column-start: 2;
+  }
+}
+
+@media (max-width: 1200px) and (min-width: 901px) {
+  /* <- 4-3  hexagons per row */
+  #hexGrid {
+    grid-template-columns: repeat(8, 1fr);
+    padding-bottom: 5.5%;
+  }
+  .hex:nth-child(7n + 5) {
+    /* first hexagon of even rows */
+    grid-column-start: 2;
+  }
+}
+
+@media (max-width: 900px) and (min-width: 601px) {
+  /* <- 3-2  hexagons per row */
+  #hexGrid {
+    grid-template-columns: repeat(6, 1fr);
+    padding-bottom: 7.4%;
+  }
+  .hex:nth-child(5n + 4) {
+    /* first hexagon of even rows */
+    grid-column-start: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  /* <- 2-1  hexagons per row */
+  #hexGrid {
+    grid-template-columns: repeat(4, 1fr);
+    padding-bottom: 11.2%;
+    grid-gap: 5px;
+  }
+  .hex:nth-child(3n + 3) {
+    /* first hexagon of even rows */
+    grid-column-start: 2;
+  }
+}
+
+@media (max-width: 400px) {
+  #hexGrid {
+    font-size: 13px;
+  }
+}
