@@ -12,20 +12,18 @@
       rel="stylesheet"
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://www.w3schools.com/lib/w3.js"></script>
 
     <link
       rel="stylesheet"
       href="./assessts/materialize/css/materialize.min.css"
     />
-    <script src="./assessts/materialize/js/materialize.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 
     <link rel="stylesheet" href="./assessts/css/mainstyle.css" />
   </head>
   <body class="bgpattern">
     <header class="row">
       <!--either side nav or circle  hoem and sidenav for added hagnes-->
+      <div class="navbar-fixed"> 
       <nav>
         <div class="navbg nav-wrapper ">
           <a href="#" class="brand-logo left ">
@@ -80,7 +78,6 @@
                 </g>
               </g>
             </svg>
-            
           </a>
           <a
             href="#"
@@ -101,43 +98,107 @@
               <a href="./contact.html">Contact</a>
             </li>
           </ul>
-          
         </div>
       </nav>
+      </div>
       <!--Side nav code-->
       <ul class="sidenav" id="mobile-nav">
-            <li >
-              <div class="user-view">
-                <div class="background bg">
-                </div>
-                <a href="#user"><img class="circle" src="assessts/images/profile.JPG"></a>
-                    <a href="#name"><span class="white-text name">Travis Nevins</span></a>
-                    <a href="#email"><span class="white-text email">travisnevins@outlook.com</span></a>
-              </div>
-            </li>
+        <li>
+          <div class="user-view">
+            <div class="background bg"></div>
+            <a href="#user"
+              ><img class="circle" src="assessts/images/profile.JPG"
+            /></a>
+            <a href="#name"
+              ><span class="white-text name">Travis Nevins</span></a
+            >
+            <a href="#email"
+              ><span class="white-text email">travisnevins@outlook.com</span></a
+            >
+          </div>
+        </li>
         <li><a href="#" class="sideactive ">About</a></li>
         <li><a href="./portfolio.html"> Portfolio</a></li>
         <li><a href="./contact.html">Contact</a></li>
-        <li><a href="https://www.linkedin.com/in/travis-nevins/">My LinkedIn <img class="circle right" src="./assessts/images/social-linkedin-circle-512.png" alt="linkedIn  logo and link" width="32" height="32" /></a></li>
-        <li><a href="https://github.com/trav-xeno">My Gighub <img class="circle right" src="./assessts/images/GitHub-Mark-32px.png" /></a></li>
+        <li>
+          <a href="https://www.linkedin.com/in/travis-nevins/"
+            >My LinkedIn
+            <img
+              class="circle right"
+              src="./assessts/images/social-linkedin-circle-512.png"
+              alt="linkedIn  logo and link"
+              width="32"
+              height="32"
+          /></a>
+        </li>
+        <li>
+          <a href="https://github.com/trav-xeno"
+            >My Gighub
+            <img
+              class="circle right"
+              src="./assessts/images/GitHub-Mark-32px.png"
+          /></a>
+        </li>
       </ul>
     </header>
     <!--I will added paral/ ax and a make a grid for application -->
-    <main class=" container">
-      <div class="card z-depth-5">
+    <main id="app">
+     
+      <div class="row">
+
+        <div class="col s12 m4">
+          <div class="col s12 ">
+              <img class="circle" src="./assessts/images/profile.JPG"
+                alt="picture of travis sitting on the side of acliff"  width="300" height="300"/>
+              </div>
+          <div class="col s12">
+              <div class="row" >
+                  <a class="point" href="https://www.linkedin.com/in/travis-nevins/">
+                    <img class="circle" src="./assessts/images/social-linkedin-circle-512.png" width="50" height="50"
+                      alt="linkedIn  logo and link" />
+                  </a>
+                  <a class="point" href="https://github.com/trav-xeno">
+                    <img class="circle" src="./assessts/images/GitHub-Mark-32px.png" width="50" height="50" />
+                  </a>
+                </div>
+                <div class="row">
+                  <p></p>
+                  <p></p>
+                  
+                </div>
+            </div>
+
+          </div>
+          derp derp derpy derp derpy pderpy derpy</div>
+        <div class="col s12 m8"></div>
+      </div>
+      <!-- 
         <div class="row col s12">
           <h3 class="headers">About Me</h3>
         </div>
         <div class="row ">
           <div class="section col s12 m6 l6 ">
-            <img class="circle responsive-img" src="./assessts/images/profile.JPG" alt="picture of travis sitting on the side of acliff" />
+            <img
+              class="circle responsive-img"
+              src="./assessts/images/profile.JPG"
+              alt="picture of travis sitting on the side of acliff"
+            />
             <div class="row">
-              <div class="col s12"> 
-                <a href="https://www.linkedin.com/in/travis-nevins/"> 
-                <img class="circle" src="./assessts/images/social-linkedin-circle-512.png" width="32" height="32" alt="linkedIn  logo and link" /> 
+              <div class="col s12">
+                <a href="https://www.linkedin.com/in/travis-nevins/">
+                  <img
+                    class="circle"
+                    src="./assessts/images/social-linkedin-circle-512.png"
+                    width="32"
+                    height="32"
+                    alt="linkedIn  logo and link"
+                  />
                 </a>
                 <a href="https://github.com/trav-xeno">
-                  <img class="circle" src="./assessts/images/GitHub-Mark-32px.png" />
+                  <img
+                    class="circle"
+                    src="./assessts/images/GitHub-Mark-32px.png"
+                  />
                 </a>
               </div>
             </div>
@@ -146,62 +207,127 @@
             <p class="flow-text">
               Hello, My name is Trvis Nevins.<br />
               I graduted from Univeristy of New hampshire in the feild of
-              Information Technology. Learning about new technologies, programming
-              languages, and doing research are just some of my hobbies. I love dogs and
-              cats. Curretnly I have a six year old golden named Mathis. He loves
-              the snow and travel. You will not meet a better behaved dog, unless
-              you see him in hyper mode. 
-            <br />
-            There are many things out in the world
-            todo and I try todo everything at least once.
-            Swimming, hockey, soccer, hiking are just some of my favorite
-            activites. If you asked me what my favorite TV show was I would give
-            you list, but if I had to choose Firefly would have to be my number one.
-            
-             </p>
-        </div>
+              Information Technology. Learning about new technologies,
+              programming languages, and doing research are just some of my
+              hobbies. I love dogs and cats. Curretnly I have a six year old
+              golden named Mathis. He loves the snow and travel. You will not
+              meet a better behaved dog, unless you see him in hyper mode.
+              <br />
+              There are many things out in the world todo and I try todo
+              everything at least once. Swimming, hockey, soccer, hiking are
+              just some of my favorite activites. If you asked me what my
+              favorite TV show was I would give you list, but if I had to choose
+              Firefly would have to be my number one.
+            </p>
+          </div>
           <section class=" section col s12 ">
             <hr />
 
-            <p class="flow-text ">I sometimes find myself reading quotes and here are some I found: </p>
+            <p class="flow-text ">
+              I sometimes find myself reading quotes and here are some I found:
+            </p>
             <blockquote class="flow-text">
-            "Creativity involves breaking out of expected patterns in order to
-            look at things in a different way." —unknown
+              "Creativity involves breaking out of expected patterns in order to
+              look at things in a different way." —unknown
             </blockquote>
-           <blockquote class="flow-text">
-            "Either write something worth reading or do something worth
-            writing."-—Ben Franklin
-           </blockquote>
-           <blockquote cite="flow-text"> 
-            "In 5-billion yrs the Sun will expand & engulf our orbit as the
-            charred ember that was once Earth vaporizes. Have a nice day."— Neil
-            deGrasse Tyson
+            <blockquote class="flow-text">
+              "Either write something worth reading or do something worth
+              writing."-—Ben Franklin
             </blockquote>
-          
+            <blockquote cite="flow-text">
+              "In 5-billion yrs the Sun will expand & engulf our orbit as the
+              charred ember that was once Earth vaporizes. Have a nice day."—
+              Neil deGrasse Tyson
+            </blockquote>
           </section>
           <section class="row section ">
             <div class="row">
-              <h4 class=" col s12 headers center-text">Programming languages </h4> 
+              <h4 class=" col s12 headers center-text">
+                Programming languages
+              </h4>
             </div>
-            <div class="col s12"> 
+            <div class="col s12">
               <div class="carousel">
-                <a class="carousel-item" href="#one!"><img src="https://cdn.freebiesupply.com/logos/thumbs/2x/c-logo.png" alt="C++ logo"></a>
-                <a class="carousel-item" href="#two!"><img src="https://miro.medium.com/max/3954/1*w0u2TZpEp3WfKMrlL5jTSw.png" alt="C# logo"></a>
-                <a class="carousel-item" href="#three!"><img src="https://miro.medium.com/max/3000/1*30aoNxlSnaYrLhBT0O1lzw.png" alt="go lang logo"></a>
-                <a class="carousel-item" href="#four!"><img src="https://rlv.zcache.com/f_software_foundation_stickers-r8a45deba20314cc2bd8486937a824c69_0ugra_8byvr_540.jpg" alt="f sharp logo"></a>
-                <a class="carousel-item" href="#five!"><img src="https://cdn.vox-cdn.com/thumbor/ada2gg-FudvYRX-s_WuP8QXXjRg=/0x33:640x393/1600x900/cdn.vox-cdn.com/assets/1087137/java_logo_640.jpg" alt="java logo"></a>
-                <a class="carousel-item" href="#six!"><img src="https://cdn.worldvectorlogo.com/logos/javascript.svg"alt="JS logo"></a>
-                <a class="carousel-item" href="#seven!"><img src="https://ih1.redbubble.net/image.684259797.9447/flat,750x,075,f-pad,750x1000,f8f8f8.jpg" alt=" kotlin logo"></a>
-                <a class="carousel-item" href="#eight!"><img src="https://www.gomyitguy.com/wp-content/uploads/2014/09/mysql-logo.jpg" alt=" mysql logo"></a>
-                <a class="carousel-item" href="#nine!" ><img src="https://xebialabs.com/wp-content/uploads/files/tool-chest/mongodb.jpg" alt="mongo db logo"></a>
-                <a class="carousel-item" href="#ten"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1024px-Python-logo-notext.svg.png" alt="python logo"/></a>
-                <a class="carousel-item" href="#eleven!"><img src="https://hazelcast.org/wp-content/uploads/2016/04/scala-logo.jpg" alt="scala logo"/> </a>
-                <a class="carousel-item" href="#twelve!"><img src="https://raw.githubusercontent.com/remojansen/logo.ts/master/ts.png" alt="typescript logo" /></a>
-                <a class="carousel-item" href="#thirteen"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Rust_programming_language_black_logo.svg/1200px-Rust_programming_language_black_logo.svg.png" alt="rust logo"></a>
+                <a class="carousel-item" href="#one!"
+                  ><img
+                    src="https://cdn.freebiesupply.com/logos/thumbs/2x/c-logo.png"
+                    alt="C++ logo"
+                /></a>
+
+                <a class="carousel-item" href="#two!"
+                  ><img
+                    src="https://miro.medium.com/max/3954/1*w0u2TZpEp3WfKMrlL5jTSw.png"
+                    alt="C# logo"
+                /></a>
+
+                <a class="carousel-item" href="#three!"
+                  ><img
+                    src="https://miro.medium.com/max/3000/1*30aoNxlSnaYrLhBT0O1lzw.png"
+                    alt="go lang logo"
+                /></a>
+
+                <a class="carousel-item" href="#four!"
+                  ><img
+                    src="https://rlv.zcache.com/f_software_foundation_stickers-r8a45deba20314cc2bd8486937a824c69_0ugra_8byvr_540.jpg"
+                    alt="f sharp logo"
+                /></a>
+
+                <a class="carousel-item" href="#five!"
+                  ><img
+                    src="https://cdn.vox-cdn.com/thumbor/ada2gg-FudvYRX-s_WuP8QXXjRg=/0x33:640x393/1600x900/cdn.vox-cdn.com/assets/1087137/java_logo_640.jpg"
+                    alt="java logo"
+                /></a>
+
+                <a class="carousel-item" href="#six!"
+                  ><img
+                    src="https://cdn.worldvectorlogo.com/logos/javascript.svg"
+                    alt="JS logo"
+                /></a>
+
+                <a class="carousel-item" href="#seven!"
+                  ><img
+                    src="https://ih1.redbubble.net/image.684259797.9447/flat,750x,075,f-pad,750x1000,f8f8f8.jpg"
+                    alt=" kotlin logo"
+                /></a>
+
+                <a class="carousel-item" href="#eight!"
+                  ><img
+                    src="https://www.gomyitguy.com/wp-content/uploads/2014/09/mysql-logo.jpg"
+                    alt=" mysql logo"
+                /></a>
+
+                <a class="carousel-item" href="#nine!"
+                  ><img
+                    src="https://xebialabs.com/wp-content/uploads/files/tool-chest/mongodb.jpg"
+                    alt="mongo db logo"
+                /></a>
+
+                <a class="carousel-item" href="#ten"
+                  ><img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1024px-Python-logo-notext.svg.png"
+                    alt="python logo"
+                /></a>
+                <a class="carousel-item" href="#eleven!"
+                  ><img
+                    src="https://hazelcast.org/wp-content/uploads/2016/04/scala-logo.jpg"
+                    alt="scala logo"
+                  />
+                </a>
+                <a class="carousel-item" href="#twelve!"
+                  ><img
+                    src="https://raw.githubusercontent.com/remojansen/logo.ts/master/ts.png"
+                    alt="typescript logo"
+                /></a>
+                <a class="carousel-item" href="#thirteen"
+                  ><img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Rust_programming_language_black_logo.svg/1200px-Rust_programming_language_black_logo.svg.png"
+                    alt="rust logo"
+                /></a>
               </div>
             </div>
           </section>
-      </div>
+        </div>
+      </div>-->
     </main>
 
     <footer class="footer">
@@ -218,5 +344,9 @@
         </div>
       </div>
     </footer>
+    <script src="./assessts/js/animejs/lib/anime.min.js"></script>
+    <script src="./assessts/materialize/js/materialize.min.js"></script>
+    <script src="./assessts/js/vue.min.js"></script>
+    <script src="./assessts/js/index.js"></script>
   </body>
 </html>

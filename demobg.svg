@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1072" viewBox="0 0 1920 1072">
+  <defs>
+    <clipPath id="clip-Web_1920_1">
+      <rect width="1920" height="1072"/>
+    </clipPath>
+  </defs>
+  <g id="Web_1920_1" data-name="Web 1920 – 1" clip-path="url(#clip-Web_1920_1)">
+    <rect width="1920" height="1072" fill="#fff"/>
+    <path id="Polygon_1" data-name="Polygon 1" d="M564,0l564,995H0Z" transform="translate(1688.89 -516.427) rotate(59)" fill="#1f1f70"/>
+    <path id="Polygon_2" data-name="Polygon 2" d="M577.5,0,1155,1402H0Z" transform="translate(1469.591 -300.183) rotate(26)" fill="#01579b"/>
+    <path id="Polygon_3" data-name="Polygon 3" d="M580.5,0,1161,518H0Z" transform="translate(545 718)" fill="#01579b"/>
+    <path id="Polygon_4" data-name="Polygon 4" d="M359.5,0,719,1460H0Z" transform="matrix(-0.309, 0.951, -0.951, -0.309, 2610.238, 1013.846)" fill="#1f1f70"/>
+    <text id="Travis_Nevins_" data-name="Travis Nevins
+" transform="translate(60 212)" font-size="84" font-family="ArialMT, Arial"><tspan x="0" y="0">Travis Nevins</tspan><tspan x="0" y="97"></tspan></text>
+    <text id="Full-Stack_Developer" data-name="Full-Stack Developer" transform="translate(60 317)" font-size="48" font-family="ArialMT, Arial"><tspan x="0" y="0">Full-Stack Developer</tspan></text>
+    <text id="Machine_Learning_and_Artificial_Intelligence_" data-name="Machine Learning and Artificial Intelligence " transform="translate(60 396)" font-size="48" font-family="ArialMT, Arial"><tspan x="0" y="0">Machine Learning and Artificial Intelligence </tspan></text>
+    <text id="UI_UX_Designer" data-name="UI/UX Designer" transform="translate(60 475)" font-size="48" font-family="ArialMT, Arial"><tspan x="0" y="0">UI/UX Designer</tspan></text>
+  </g>
+</svg>

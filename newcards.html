@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="./assessts/materialize/css/materialize.min.css"
+    />
+
+    <script src="./assessts/js/animejs/lib/anime.min.js"></script>
+    <link rel="stylesheet" href="./assessts/css/mainstyle.css" />
+
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(-45deg, #01579b, #1f1f70, #0097a7, #00897b);
+        background-size: 400% 400%;
+        animation: gradient 9s ease infinite;
+        z-index: -1;
+      }
+     
+      /* entire container, keeps perspective */
+      .flip-container {
+        perspective: 1000px;
+      }
+      /* flip the pane when hovered */
+      .flip-container:hover .flipper,
+      .flip-container.hover .flipper {
+        transform: rotateY(180deg);
+      }
+
+      /*
+             .flip-container,
+             .front,
+             .back {
+               width: 320px;
+               height: 480px;
+             }
+       */
+      /* flip speed goes here */
+      .flipper {
+        transition: 0.6s;
+        transform-style: preserve-3d;
+
+        position: relative;
+      }
+
+      /* hide back of pane during swap */
+      .flip-front,
+      .flip-back {
+        backface-visibility: hidden;
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      /* front pane, placed above back */
+      .flip-front {
+        z-index: 2;
+        /* for firefox 31 */
+        transform: rotateY(0deg);
+      }
+
+      /* back, initially hidden pane */
+      .flip-back {
+        transform: rotateY(180deg);
+      }
+      form {
+  margin: 100px;
+}
+
+.input-field {
+  position: relative;
+  width: 250px;
+  height: 44px;
+  line-height: 44px;
+}
+.container {
+  background: transparent;
+}
+label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: #00eb80;
+  transition: 0.2s all;
+  cursor: text;
+}
+
+input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  padding: 0.5rem 0;
+  border-bottom: 2px solid #d3d3d3;
+  box-shadow: none;
+  color: #fff;
+}
+
+input:invalid {
+  outline: 0;
+}
+
+input:focus,
+input:valid {
+  border-color: #00eb80;
+}
+.static-gradi{
+    background: linear-gradient(-45deg, #01579b 10%, #1f1f70 90% );
+
+
+}
+textarea{
+  color: #fff;
+}
+input:focus ~ label,
+input:valid ~ label {
+  font-size: 14px;
+  top: -24px;
+  color: #00eb80;
+}
+
+      .tn-card-container {
+        font-family: "Open Sans", sans serif;
+        font-weight: bold;
+
+        /* width: 400px;
+               height: 250px;
+               margin: 80px auto;
+
+               border-radius: 10px;
+       */
+        perspective: 1400px;
+      }
+      .tn-card-container:hover {
+        cursor: pointer;
+      }
+      .card {
+        transform-style: preserve-3d;
+      }
+      .tn-card {
+        position: relative;
+
+        height: 100%;
+
+        border-radius: 10px;
+
+        width: 100%;
+        transform-style: preserve-3d;
+      }
+      .view {
+        min-width: 500px;
+        border: 2px solid slateblue;
+       /* background: rgba(112, 112, 112, .5);*/
+      }
+      .w3-card-4,.w3-hover-shadow:hover{   box-shadow: 5px 10px 18px 10px #888888;
+
+}
+
+
+      .top-view{
+        margin-top: 30px;
+        min-width: 500px;
+      }
+
+      .front,
+      .back {
+        /* display: flex;*/
+
+        width: 100%;
+        height: 100%;
+
+        border-radius: 10px;
+
+        /*justify-content: center; */
+        align-items: center;
+        backface-visibility: hidden;
+      }
+
+      .front {
+        color: #fff;
+        background: #2196f3;
+      }
+
+      .back {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        transform: rotateY(180deg);
+
+        color: #2196f3;
+        background: linear-gradient(45deg, #1f1f70 0%, #01579b 100%);
+      }
+      .margin{
+        padding-left: 10px ;
+        padding-right: 10px ;
+      }
+      #nav {
+        position: fixed;
+        top: 0;
+        right: 50%;
+      }
+
+      section {
+        min-height: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="row">
+      <!--either side nav or circle  hoem and sidenav for added hagnes-->
+      <div class="navbar-fixed">
+        <nav>
+          <div class="navbg nav-wrapper ">
+            <a href="#" class="brand-logo left ">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                width="80"
+                height="80"
+                viewBox="0 0 100 100"
+              >
+                <defs>
+                  <clipPath id="clip-custom_1">
+                    <rect width="100" height="100" />
+                  </clipPath>
+                </defs>
+                <g
+                  id="custom_1"
+                  data-name="custom – 1"
+                  clip-path="url(#clip-custom_1)"
+                >
+                  <rect width="100" height="100" fill="#1f1f70" />
+                  <g
+                    id="Rectangle_1"
+                    data-name="Rectangle 1"
+                    transform="translate(49.841 6) rotate(45)"
+                    fill="none"
+                    stroke="#00e8b0"
+                    stroke-width="4"
+                  >
+                    <rect width="62" height="62" rx="9" stroke="none" />
+                    <rect
+                      x="2"
+                      y="2"
+                      width="58"
+                      height="58"
+                      rx="7"
+                      fill="none"
+                    />
+                  </g>
+                  <text
+                    id="T"
+                    transform="translate(42 62)"
+                    fill="#00e8b0"
+                    font-size="30"
+                    font-family="Arial, Helvetica, sans-serif"
+                  >
+                    <tspan x="0" y="0">T</tspan>
+                  </text>
+                  <g
+                    id="Rectangle_2"
+                    data-name="Rectangle 2"
+                    transform="translate(19 19)"
+                    fill="none"
+                    stroke="#e8b200"
+                    stroke-width="4"
+                  >
+                    <rect width="62" height="62" rx="7" stroke="none" />
+                    <rect
+                      x="2"
+                      y="2"
+                      width="58"
+                      height="58"
+                      rx="5"
+                      fill="none"
+                    />
+                  </g>
+                </g>
+              </svg>
+            </a>
+            <a
+              href="#"
+              data-target="mobile-nav"
+              class="sidenav-trigger text-white right"
+            >
+              <i class="material-icons">menu</i>
+            </a>
+
+            <ul class="right text-white hide-on-med-and-down ">
+              <li>
+                <a href="#" class="active  ">About</a>
+              </li>
+              <li>
+                <a href="./portfolio.html">Portfolio</a>
+              </li>
+              <li>
+                <a href="./contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <!--Side nav code-->
+      <ul class="sidenav" id="mobile-nav">
+        <li>
+          <div class="user-view">
+            <div class="background bg"></div>
+            <a href="#user"
+              ><img class="circle" src="assessts/images/profile.JPG"
+            /></a>
+            <a href="#name"
+              ><span class="white-text name">Travis Nevins</span></a
+            >
+            <a href="#email"
+              ><span class="white-text email">travisnevins@outlook.com</span></a
+            >
+          </div>
+        </li>
+        <li><a href="#" class="sideactive ">About</a></li>
+        <li><a href="./portfolio.html"> Portfolio</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+        <li>
+          <a href="https://www.linkedin.com/in/travis-nevins/"
+            >My LinkedIn
+            <img
+              class="circle right"
+              src="./assessts/images/social-linkedin-circle-512.png"
+              alt="linkedIn  logo and link"
+              width="32"
+              height="32"
+          /></a>
+        </li>
+        <li>
+          <a href="https://github.com/trav-xeno"
+            >My Gighub
+            <img
+              class="circle right"
+              src="./assessts/images/GitHub-Mark-32px.png"
+          /></a>
+        </li>
+      </ul>
+    </header>
+    <main>
+      <div class="row">
+        <section class="top-view">
+          <div class="col s12">
+            <div class=" center-align white-text">
+            <h1>
+              Travis Nevins
+            </h1>
+            <p>
+              Full-stack Developer <br />
+              UI/UX Designer
+              <br />
+              Machine Learning and Artificial Intelligence
+            </p>
+            
+          </div>
+        </section>
+      </div>
+      <section class="view" id="About">
+        AboutUs
+      </section>
+
+      <section class="view" id="exp">
+        <div class="row">
+          <div class="col s12">
+            <h3 class="center-align white-text"  >GitHub Projects</h3>
+          </div>
+         
+          
+        </div>
+        <div class="row"> 
+          <div class="col s12 m4">
+            <div class="card">
+              <div class="card-image">
+                <img src="./assessts/images/activescreen.png">
+                <span class="card-title">Scheduler App</span>
+              </div>
+              <div class="card-content">
+                <p>A day Scheduler built with Jquery.</p>
+              </div>
+              <div class="card-action">
+                <a href="https://github.com/trav-xeno/Calendar-App.git">GitHub Repo</a>
+                <a href="https://trav-xeno.github.io/Calendar-App/">Deployed Demo</a>
+              </div>
+            </div>
+          </div>
+            <div class="col s12 m4">
+              <div class="card">
+                <div class="card-image">
+                  <img alt="passwrod generator app image" src="./assessts/images/app_example.PNG">
+                  <span class="card-title">Password Generator</span>
+                </div>
+                <div class="card-content">
+                  <p>A simple password generator built with VueJS.</p>
+                </div>
+                <div class="card-action">
+                  <a href="https://github.com/trav-xeno/Password-Generator.git">GitHub Repe</a>
+                  <a href="https://trav-xeno.github.io/Password-Generator/">Deployed Demo</a>
+                </div>
+              </div>
+            </div>
+            <div class="col s12 m4">
+              <div class="card">
+                <div class="card-image">
+                  <img src="./assessts/images/project1.png">
+                  <span class="card-title">Project 1 </span>
+                </div>
+                <div class="card-content">
+                  <p>Hike and Hops is the name of my first group project. I did the Jquery dynamic data/html rendering on the page</p>
+                </div>
+                <div class="card-action">
+                  <a href="https://github.com/lalliere/Project-1.git">GitHub Repo</a>
+                  <a href="https://lalliere.github.io/Project-1/">Deployed Demo</a>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+        <div class="row">
+          <h3 class="center-align white-text">Future Projects </h3>
+           <ul id="hexGrid">
+              <li class="hex">
+                <div class="hexIn">
+                  <a class="hexLink" href="#">
+                    <svg>
+                      <rect width="200" height="200" x="50" y="20" />
+                      <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">
+                        Web Assembly
+                      </text>
+                    </svg>
+                    <h1>Rust programming</h1>
+                  </a>
+                </div>
+              </li>
+                <li class="hex">
+                  <div class="hexIn">
+                    <a class="hexLink" href="#">
+                      <svg>
+                        <rect width="200" height="200" x="50" y="20" />
+                        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">
+                          Algorithm Desgin
+                        </text>
+                      </svg>
+                      <h1>Rust/JS</h1>
+                    </a>
+                  </div>
+                </li>
+              <li class="hex">
+                <div class="hexIn">
+                  <a class="hexLink" href="#">
+                    <svg>
+                      <rect width="200" height="200" x="50" y="20" />
+                      <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">
+                        ML/AI
+                      </text>
+                    </svg>
+                    <h1>Tensorflow JS</h1>
+                  </a>
+                </div>
+              </li>
+             
+              <li class="hex">
+                <div class="hexIn">
+                  <a class="hexLink" href="#">
+                    <svg>
+                      <rect width="200" height="200" x="50" y="20" />
+                      <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">
+                        Elm
+                      </text>
+                    </svg>
+                    <h1>Functional Front-end</h1>
+                  </a>
+                </div>
+              </li>
+              <li class="hex">
+                <div class="hexIn">
+                  <a class="hexLink" href="#">
+                    <svg class="hexbg">
+                      <rect width="200" height="200" x="50" y="20" />
+                      <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">
+                        Typescript
+                      </text>
+                    </svg>
+                    <h1>Angular and React</h1>
+                  </a>
+                </div>
+              </li>
+              <li class="hex">
+                <div class="hexIn">
+                  <a class="hexLink" href="#">
+                    <svg class="hexbg">
+                      <rect width="200" height="200" x="50" y="20" />
+                      <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">
+                        Web Auth
+                      </text>
+                    </svg>
+                    <h1>Authentication Practice</h1>
+                  </a>
+                </div>
+              </li>
+              <li class="hex">
+                <div class="hexIn">
+                  <a class="hexLink" href="#">
+                    <svg class="hexbg">
+                      <rect width="200" height="200" x="50" y="20" />
+                      <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">
+                        litElement
+                      </text>
+                    </svg>
+                    <h1>Custom Web Elements</h1>
+                  </a>
+                </div>
+              </li>
+                <li class="hex">
+                  <div class="hexIn">
+                    <a class="hexLink" href="#">
+                      <svg class="hexbg">
+                        <rect width="200" height="200" x="50" y="20" />
+                        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">
+                          WebGL
+                        </text>
+                      </svg>
+                      <h1>Game Making</h1>
+                    </a>
+                  </div>
+                </li>
+            </ul>
+        </div>
+
+      </section>
+
+      <section class="view  static-gradi" id="Contact">
+        <div class="container">
+        <div class="row">
+            <div class="row col s12">
+              <h3 class=" white-text center-align">Contact Me</h3>
+            </div>
+          
+            <div class="row static-gradi  ">
+              <form class="col s12">
+                <div class="row">
+                  <div class="input-field col s12 m6 l6 ">
+                    <input id="frist_name" type="text" class="validate" />
+                    <label for="first_name">First Name</label>
+                  </div>
+                  <div class="input-field col s12 m6 l6">
+                    <input id="last_name" type="text" class="validate" />
+                    <label for="last_name">Last Name</label>
+                  </div>
+                </div>
+          
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input id="email" type="email" class="validate" />
+                    <label for="email">Email</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <textarea id="textarea1" rows="10" class="materialize-textarea"></textarea>
+                    <label for="textarea1">Message</label>
+                  </div>
+                </div>
+                <button type="submit" onclick="popUp()" id="submit" class="submit  btn-large  ">
+                  Submit
+                  <i class="material-icons right">send</i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+        </div>
+        </section>
+
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container center">
+        <div class="row">
+          <div class="col s12">
+            <h5 class="white-text ">Travis Nevins Portfolio</h5>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container center">
+          Copyright©
+        </div>
+      </div>
+    </footer>
+    <script src="./assessts/materialize/js/materialize.min.js"></script>
+    <script src="./assessts/js/vue.min.js"></script>
+    <script src="./assessts/js/index.js"></script>
+  </body>
+</html>
