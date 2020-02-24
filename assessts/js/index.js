@@ -4,6 +4,7 @@ const project = $("#project");
 let playing = false;
 const cards = $(".card");
 console.log(cards);
+/*
 var card = document.querySelector(".card");
 var flipcard = document.querySelector(".card");
 cards.on("click", function() {
@@ -20,7 +21,7 @@ cards.on("click", function() {
       playing = false;
     }
   });
-});
+});*/
 /*
 card.addEventListener("click", function(event) {
   if (playing) return;
@@ -36,7 +37,7 @@ card.addEventListener("click", function(event) {
       playing = false;
     }
   });
-});
+});*/
 $(window).bind("scroll", function() {
   var currentTop = $(window).scrollTop();
   var elems = $(".scrollspy");
@@ -53,7 +54,7 @@ $(window).bind("scroll", function() {
         .removeClass("active");
     }
   });
-});*/
+});
 $(function() {
   M.AutoInit();
 
