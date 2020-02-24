@@ -4,7 +4,38 @@ const project = $("#project");
 let playing = false;
 const cards = $(".card");
 console.log(cards);
+
 /*
+new Vue({
+  el: "#app",
+  data() {
+    return {
+      isActive: false
+    };
+  },
+  methods: {
+    handleScroll() {
+      const els = document.querySelectorAll(".scroll");
+      els.forEach(el => {
+        const elTop = el.getBoundingClientRect().top;
+        const elBottom = el.getBoundingClientRect().bottom;
+        console.log(elBottom);
+        if (elTop >= 0 || elBottom <= 0) {
+          this.isActive = false;
+        }
+        if (elTop <= 0 && elBottom >= 0) {
+          this.isActive = true;
+        }
+      });
+    }
+  },
+  created() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.handleScroll);
+  }
+});
 var card = document.querySelector(".card");
 var flipcard = document.querySelector(".card");
 cards.on("click", function() {
@@ -37,7 +68,7 @@ card.addEventListener("click", function(event) {
       playing = false;
     }
   });
-});*/
+});
 $(window).bind("scroll", function() {
   var currentTop = $(window).scrollTop();
   var elems = $(".scrollspy");
@@ -54,9 +85,15 @@ $(window).bind("scroll", function() {
         .removeClass("active");
     }
   });
-});
+});*/
 $(function() {
   M.AutoInit();
+  /*
+  $(function() {
+    $("#navigation").navpoints({
+      updateHash: true
+    });
+  });*/
 
   /*
   var morphing = anime({
