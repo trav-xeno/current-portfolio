@@ -1,5 +1,5 @@
 # Current Portfolio
-This repo contains the files of my the most current portfolio. 
+This repo contains the files of the most current portfolio. 
 This was wrtien in vue.js and vuetify and the complied code is on the branch gh-pages.
 
 ## Updated Schedule 
